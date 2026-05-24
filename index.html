@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mile Aviation Academy — Start Your Aviation Career</title>
+  <meta name="description" content="Premium aviation training for aspiring pilots, cabin crew, and aviation professionals in Chennai. DGCA certified. World-class facilities." />
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       LOADER
+       Shows on page load, fades out after 1.8s
+  ====================================================== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+         <span class="logo-mark">✈</span>
+      </div>
+      <div class="loader-tagline">MILE AVIATION ACADEMY</div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <div class="loader-sub">Ready for take-off…</div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       SCROLL PROGRESS BAR
+  ====================================================== -->
+  <div id="scroll-progress"></div>
+
+  <!-- =====================================================
+       NAVBAR — Sticky, transparent → glass on scroll
+       Active section highlighted via JS IntersectionObserver
+  ====================================================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Mile Aviation Academy home">
+      <img src="images/logo.png" alt="Mile Aviation Academy Logo" class="logo-img">
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#hero"        class="nav-link" data-section="hero">Home</a></li>
+        <li><a href="#courses"     class="nav-link" data-section="courses">Courses</a></li>
+        <li><a href="#about"       class="nav-link" data-section="about">About</a></li>
+        <li><a href="#contact"     class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contact" class="nav-cta btn btn-primary" aria-label="Apply to Mile Aviation Academy">
+        Apply Now
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="#hero"    class="mm-link">Home</a></li>
+        <li><a href="#courses" class="mm-link">Courses</a></li>
+        <li><a href="#career"  class="mm-link">Career Path</a></li>
+        <li><a href="#about"   class="mm-link">About</a></li>
+        <li><a href="#gallery" class="mm-link">Gallery</a></li>
+        <li><a href="#contact" class="mm-link mm-cta">Apply Now →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- =====================================================
+       SECTION 1: HERO
+       Dark navy gradient, particle canvas, word-by-word reveal
+  ====================================================== -->
+  <section id="hero" class="section-dark" aria-label="Hero">
+
+    <!-- Animated background layer -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <div class="hero-content container">
+
+      <!-- Left: Headline & CTAs -->
+      <div class="hero-left">
+
+        <div class="hero-badge reveal-fade">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Ready for take-off…
+        </div>
+
+        <!-- Word-by-word reveal heading -->
+        <h1 class="hero-heading" aria-label="Start Your Aviation Career">
+          <span class="word-wrap"><span class="word-reveal">Start</span></span>
+          <span class="word-wrap"><span class="word-reveal">Your</span></span>
+          <br aria-hidden="true"/>
+          <span class="word-wrap"><span class="word-reveal accent-word">Aviation</span></span>
+         
+          <span class="word-wrap"><span class="word-reveal">Career</span></span>
+        </h1>
+
+        <p class="hero-sub reveal-fade">
+          Professional aviation training for aspiring cabin crew, and aviation professionals.
+          Your runway to success starts here — in Chennai.
+        </p>
+
+        <div class="hero-ctas reveal-fade">
+          <a href="#courses" class="btn btn-primary">
+            <span>Explore Courses</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            Talk to Admissions
+          </a>
+        </div>
+
+        <!-- Social proof strip -->
+         
+        <div class="hero-stats reveal-fade" role="list" aria-label="Key statistics">
+          <div class="hstat" role="listitem">
+           <!-- <strong>500+</strong>
+            <span>Students Trained</span>-->
+          </div>
+          <div class="hstat-div" aria-hidden="true"></div>
+          <div class="hstat" role="listitem">
+           <!--  <strong>92%</strong>
+            <span>Placement Rate</span>-->
+          </div>
+          <div class="hstat-div" aria-hidden="true"></div>
+          <div class="hstat" role="listitem">
+           <!-- <strong>8+</strong>
+            <span>Years of Excellence</span>-->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Hero image with floating cards -->
+      <div class="hero-right reveal-scale" aria-hidden="true">
+        <div class="hero-img-wrap">
+          <div class="hero-img-glow"></div>
+          <div class="hero-img-frame">
+            <img
+              src="images/ChatGPT Image May 17, 2026, 12_07_43 PM.png"
+              alt="Pilot training cockpit"
+              class="hero-img"
+              loading="eager"
+              width="900"
+            />
+            <div class="hero-img-overlay"></div>
+          </div>
+
+          <!-- Floating trust badges -->
+          <div class="float-card card-top-right">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <strong>DGCA Approved</strong>
+              <span>Govt. of India Certified</span>
+            </div>
+          </div>
+
+          <div class="float-card card-bottom-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="#c9a84c" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/></svg>
+            <div>
+              <strong>Next Batch</strong>
+              <span>Rolling Admissions Open</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.hero-content -->
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+  </section><!-- /#hero -->
+
+
+  <!-- =====================================================
+       SECTION 2: COURSES
+       Light background, 4-column course cards with hover lift
+  ====================================================== -->
+  <section id="courses" class="section section-light" aria-labelledby="courses-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-label reveal-up">Our Programs</div>
+        <h2 class="section-heading reveal-up" id="courses-heading">
+          Aviation courses built<br/>
+          <em>for real careers</em>
+        </h2>
+        <p class="section-sub reveal-up">
+          Every program is structured with industry standards, practical simulations, and direct placement pathways.
+        </p>
+      </div>
+
+      <div class="courses-grid">
+
+        <!-- Card 1: CPL -->
+        <article class="course-card reveal-card" data-delay="0">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M5 20C5 20 8 14 14 12L28 8C28 8 30 8 32 10L36 14C36 14 34 16 30 16L24 16L20 24L16 24L18 16L12 16C12 16 8 18 5 20Z" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 28L10 32" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="card-tag">Most Popular</div>
+          <h3 class="card-title">GROUND OPERATIONS MANAGEMENT (G.O.M)</h3>
+          <ul class="card-desc">
+            <li>Passenger Handling (Check-in, Boarding)</li>
+            <li>Airport Ground Operations</li>
+            <li>Aviation Security Procedures</li>
+            <li>GDS & Ticketing Basics</li>
+            <li>Airline Customer Service</li>
+          </ul>
+          <div class="card-meta">
+            <span>60 session</span>
+            <span>DGCA Certified</span>
+          </div>
+          <a href="#contact" class="card-link" aria-label="Enquire about Commercial Pilot Licence">
+            <span>Enquire Now</span>
+
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path
+           d="M3 8H13M13 8L9 4M13 8L9 12"
+           stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+            stroke-linejoin="round"
+            />
+          </svg>
+          </a>
+          <div class="card-glow" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 2: Cabin Crew -->
+        <article class="course-card reveal-card" data-delay="100">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="12" r="5" stroke="#c9a84c" stroke-width="1.5"/><path d="M10 32C10 26.477 14.477 22 20 22C25.523 22 30 26.477 30 32" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M15 26L20 30L25 26" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card-title">GUEST RELATIONS, EXPERIENCE & TOURISM (G.R.E.A.T)</h3>
+          <ul class="card-desc">
+            <li>Customer Interaction & Communication</li>
+            <li>Hospitality & Service Skills</li>
+            <li>Tourism Basics</li>
+            <li>Grooming & Personality Development</li>
+            <li>Guest Experience Management Talks</li>
+          </ul>
+          <div class="card-meta">
+            <span>45 session</span>
+            <span>IATA Recognized</span>
+          </div>
+          <a href="#contact" class="card-link" aria-label="Enquire about Cabin Crew Training">
+            Enquire Now
+            <svg width="100" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="card-glow" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 3: Ground Operations -->
+        <!--<article class="course-card reveal-card" data-delay="200">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="24" width="28" height="4" rx="1" stroke="#c9a84c" stroke-width="1.5"/><path d="M12 24V18H28V24" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/><path d="M20 18V14" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14H24" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card-title">Ground Operations Management</h3>
+          <p class="card-desc">Airport ramp coordination, baggage handling, turn-around operations, and safety compliance aligned to airline SOP standards.</p>
+          <div class="card-meta">
+            <span>4–6 Months</span>
+            <span>AASSC Certified</span>
+          </div>
+          <a href="#contact" class="card-link" aria-label="Enquire about Ground Operations Management">
+            Enquire Now
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="card-glow" aria-hidden="true"></div>
+        </article>
+
+        <!-- Card 4: Guest Relations -->
+        <!--<article class="course-card reveal-card" data-delay="300">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M8 28C8 28 10 20 20 20C30 20 32 28 32 28" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M14 20C14 16 16 12 20 12C24 12 26 16 26 20" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="10" r="3" stroke="#c9a84c" stroke-width="1.5"/><path d="M6 34H34" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="card-title">Guest Relations &amp; Tourism (G.R.E.A.T)</h3>
+          <p class="card-desc">Premium hospitality, guest experience management, tourism fundamentals, and service excellence for the travel industry.</p>
+          <div class="card-meta">
+            <span>3–4 Months</span>
+            <span>Industry Certified</span>
+          </div>
+          <a href="#contact" class="card-link" aria-label="Enquire about Guest Relations and Tourism">
+            Enquire Now
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="card-glow" aria-hidden="true"></div>
+        </article>-->
+
+      </div><!-- /.courses-grid -->
+    </div><!-- /.container -->
+  </section><!-- /#courses -->
+
+
+  <!-- =====================================================
+       SECTION 3: CAREER PATH (timeline)
+       Dark background, 4-step horizontal timeline
+  ====================================================== -->
+  <section id="career" class="section section-dark" aria-labelledby="career-heading">
+    <div class="container">
+
+      <div class="section-header section-header--center">
+        <div class="section-label reveal-up">Your Journey</div>
+        <h2 class="section-heading reveal-up" id="career-heading">
+          From ambition<br/>
+          <em>to the cockpit</em>
+        </h2>
+      </div>
+
+      <!-- Timeline row with animated connector line -->
+      <div class="timeline" role="list" aria-label="Career pathway steps">
+        <div class="timeline-line" id="timeline-line" aria-hidden="true"></div>
+
+        <div class="timeline-step reveal-card" data-delay="0" role="listitem">
+          <div class="step-node">
+            <div class="step-ring"></div>
+            <span class="step-num">01</span>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 10v12l12 6 12-6V10L16 4z" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body">
+            <h4>Enroll</h4>
+            <p>Choose your program, submit your application, and join a batch of motivated aviation professionals.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-card" data-delay="150" role="listitem">
+          <div class="step-node">
+            <div class="step-ring"></div>
+            <span class="step-num">02</span>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="16" rx="2" stroke="#c9a84c" stroke-width="1.5"/><path d="M4 13h24" stroke="#c9a84c" stroke-width="1.5"/><circle cx="16" cy="20" r="2" fill="#c9a84c"/></svg>
+          </div>
+          <div class="step-body">
+            <h4>Train</h4>
+            <p>Rigorous coursework, live simulator sessions, industry guest lectures, and hands-on airport exposure.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-card" data-delay="300" role="listitem">
+          <div class="step-node">
+            <div class="step-ring"></div>
+            <span class="step-num">03</span>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l2.47 7.6H27l-6.87 4.99 2.62 7.41L16 19.4l-6.75 4.6 2.62-7.41L5 11.6h8.53L16 4z" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body">
+            <h4>Certify</h4>
+            <p>Earn DGCA, IATA, or AASSC certifications. Pass regulatory exams with our focused coaching.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-card" data-delay="450" role="listitem">
+          <div class="step-node">
+            <div class="step-ring"></div>
+            <span class="step-num">04</span>
+          </div>
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M6 20c0 0 2-6 10-6s10 6 10 6" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M4 26C4 26 8 22 16 22s12 4 12 4" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M10 14L8 8l4 2 4-6 4 6 4-2-2 6" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="step-body">
+            <h4>Get Placed</h4>
+            <p>Our dedicated placement cell connects you with airlines, airports, and aviation companies across India.</p>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+    </div>
+  </section><!-- /#career -->
+
+
+  <!-- =====================================================
+       STATS BAND — dark, full-width numbers
+  ====================================================== -->
+ <!-- <section id="stats" class="stats-section" aria-labelledby="stats-heading">
+    <div class="stats-bg-grid" aria-hidden="true"></div>
+    <div class="container">
+      <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
+      <div class="stats-grid" role="list" aria-label="Academy statistics">
+
+        <div class="stat-item reveal-stat" data-delay="0" role="listitem">
+          <div class="stat-row">
+            <span class="stat-value" data-target="500">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Students Trained</div>
+          <div class="stat-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="stat-item reveal-stat" data-delay="100" role="listitem">
+          <div class="stat-row">
+            <span class="stat-value" data-target="92">0</span>
+            <span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-label">Placement Success Rate</div>
+          <div class="stat-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="stat-item reveal-stat" data-delay="200" role="listitem">
+          <div class="stat-row">
+            <span class="stat-value" data-target="8">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Years of Excellence</div>
+          <div class="stat-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="stat-item reveal-stat" data-delay="300" role="listitem">
+          <div class="stat-row">
+            <span class="stat-value" data-target="25">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">Airline Partners</div>
+          <div class="stat-line" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+
+  <!-- =====================================================
+       SECTION 4: ABOUT (Why Choose Us)
+       Light-grey background, image + feature list two-column
+  ====================================================== -->
+  <section id="about" class="section section-grey" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Left: Image block -->
+        <div class="about-img-wrap reveal-card">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&q=85"
+            alt="Aviation students in training classroom"
+            class="about-img"
+            loading="lazy"
+            width="700"
+          />
+          <div class="about-img-accent" aria-hidden="true"></div>
+          <!-- Years badge -->
+          <div class="about-badge" aria-label="8 years in excellence">
+            <!-- <span class="badge-num">8+</span> -->
+            <span>Years<br/>Excellence</span>
+          </div>
+          <!-- Testimonial floating card -->
+          <div class="testi-float" aria-hidden="true">
+            <div class="testi-float-stars">★★★★★</div>
+            <p>Mile Aviation <br>Ready for take-off..</p>
+            <!-- <strong>— Priya Sharma, Cabin Crew</strong> -->
+          </div>
+        </div>
+
+        <!-- Right: Copy -->
+        <div class="about-copy">
+          <div class="section-label reveal-up">Why Choose Us</div>
+          <h2 class="section-heading reveal-up" id="about-heading">
+            Built by industry.<br/>
+            <em>For industry.</em>
+          </h2>
+          <p class="about-para reveal-up">
+            Mile Aviation Academy was founded by aviation professionals to bridge the gap between classroom education and airline expectations. Every curriculum detail is shaped by real cockpit and cabin experience.
+          </p>
+          
+
+          <!-- Feature list -->
+          <div class="about-pillars">
+
+            <div class="pillar reveal-up" data-delay="0">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>DGCA &amp; IATA Certified Instructors</strong>
+                <span>Learn from real airline professionals with thousands of flight hours and ground experience.</span>
+              </div>
+            </div>
+
+            <div class="pillar reveal-up" data-delay="100">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>State-of-the-Art Simulators</strong>
+                <span>Train on modern flight simulators and full-scale cabin mockups used by real airlines.</span>
+              </div>
+            </div>
+
+            <div class="pillar reveal-up" data-delay="200">
+              <div class="pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Dedicated Placement Cell</strong>
+                <span>Direct partnerships with IndiGo, Air India, SpiceJet, and 20+ more aviation employers.</span>
+              </div>
+            </div>
+
+          </div><!-- /.about-pillars -->
+        </div>
+
+      </div><!-- /.about-grid -->
+    </div>
+  </section><!-- /#about -->
+
+
+  <!-- =====================================================
+       SECTION 5: GALLERY
+       Dark background, masonry-style grid with hover overlay
+  ====================================================== -->
+  <section id="gallery" class="section section-dark" aria-labelledby="gallery-heading">
+    <div class="container">
+
+      <div class="section-header section-header--center">
+        <div class="section-label reveal-up">Campus Life</div>
+        <h2 class="section-heading reveal-up" id="gallery-heading">
+          See the <em>experience</em>
+        </h2>
+      </div>
+
+      <div class="gallery-grid" role="list" aria-label="Gallery of campus and training photos">
+
+        <div class="gallery-item gi-tall reveal-card" data-delay="0" role="listitem">
+          <img src="images/WhatsApp Image 2026-05-17 at 12.37.02 PM (1).jpeg" alt="Cockpit simulation training">
+          <div class="gallery-overlay" aria-hidden="true"><span>Cockpit Simulation</span></div>
+        </div>
+
+        <div class="gallery-item reveal-card" data-delay="80" role="listitem">
+          <img src="images/WhatsApp Image 2026-05-17 at 12.37.02 PM.jpeg" alt="Runway operations training" loading="lazy" />
+          <div class="gallery-overlay" aria-hidden="true"><span>Runway Operations</span></div>
+        </div>
+
+        <div class="gallery-item reveal-card" data-delay="160" role="listitem">
+          <img src="images/WhatsApp Image 2026-05-17 at 12.37.03 PM.jpeg" alt="Aircraft familiarization" loading="lazy" />
+          <div class="gallery-overlay" aria-hidden="true"><span>Aircraft Familiarization</span></div>
+        </div>
+
+        <div class="gallery-item gi-wide reveal-card" data-delay="240" role="listitem">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80" alt="Practical flight training aerial view" loading="lazy" />
+          <div class="gallery-overlay" aria-hidden="true"><span>Practical Flight Training</span></div>
+        </div>
+
+       <!-- <div class="gallery-item reveal-card" data-delay="320" role="listitem">
+          <img src="https://images.unsplash.com/photo-1606768666853-403c90a981ad?w=600&q=80" alt="Ground handling training" loading="lazy" />
+          <div class="gallery-overlay" aria-hidden="true"><span>Ground Handling</span></div>
+        </div> -->
+
+      </div><!-- /.gallery-grid -->
+    </div>
+  </section><!-- /#gallery -->
+
+
+  
+
+      <!--<div class="section-header section-header--center">
+        <div class="section-label reveal-up">Student Stories</div>
+        <h2 class="section-heading reveal-up" id="testi-heading">
+          Graduates who <em>took off</em>
+        </h2>
+      </div>
+
+      <div class="testimonials-track" role="region" aria-label="Testimonials slider">
+        <div class="testimonials-inner" id="testimonials-inner">
+
+          <article class="testimonial-card">
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"The training was exceptional. Instructors are industry experts, facilities are top-notch. Placed with a leading airline within 3 months of graduation."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">PS</div>
+              <div>
+                <strong>Priya Sharma</strong>
+                <span>Cabin Crew · IndiGo Airlines</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Simulator training and practical sessions prepared me for real-world flying. The DGCA approval and placement support made all the difference."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">RV</div>
+              <div>
+                <strong>Rahul Verma</strong>
+                <span>Commercial Pilot · Air India</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"World-class curriculum and industry exposure. Guest lectures from airline executives gave me insights I couldn't get from textbooks alone."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">AK</div>
+              <div>
+                <strong>Ananya Krishnan</strong>
+                <span>Ground Operations · SpiceJet</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Mile Aviation gave me more than a certificate — it gave me confidence and clarity. The faculty genuinely care about your growth and career."</blockquote>
+            <div class="t-author">
+              <div class="t-avatar" aria-hidden="true">AM</div>
+              <div>
+                <strong>Arjun Mehta</strong>
+                <span>Airport Operations · GMR Group</span>
+              </div>
+            </div>
+          </article>-->
+
+        </div><!-- /#testimonials-inner -->
+      </div><!-- /.testimonials-track -->
+
+      <!-- Slider controls -->
+      <!--<div class="testimonials-nav" role="group" aria-label="Testimonials navigation">
+        <button id="t-prev" class="t-nav-btn" aria-label="Previous testimonial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="t-dots" id="t-dots" role="tablist" aria-label="Testimonial pages"></div>
+        <button id="t-next" class="t-nav-btn" aria-label="Next testimonial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+    </div>-->
+  <!--</section><!-- /#testimonials -->
+<!-- =====================================================
+       CTA BANNER — final conversion push
+  ====================================================== -->
+  <section id="cta-banner" class="cta-banner" aria-label="Call to action">
+    <div class="cta-bg" aria-hidden="true">
+      <div class="cta-orb"></div>
+    </div>
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="reveal-up">
+          The sky is not the limit.<br/>
+          <em>It's the beginning.</em>
+        </h2>
+        <p class="reveal-up">Applications for the next batch are open. Limited seats available.</p>
+        <div class="cta-btns reveal-up">
+          <a href="#contact" class="btn btn-primary">Apply Now</a>
+          <a href="tel:+917676597979" class="btn btn-ghost">Call Admissions</a>
+        </div>
+      </div>
+    </div>
+  </section>  
+<!-- =====================================================
+       TESTIMONIALS (between gallery and contact)
+       Dark section, slider with dots + prev/next
+  ====================================================== -->
+  <section id="testimonials" class="section section-dark" aria-labelledby="testi-heading">
+    <div class="container">
+<!-- =====================================================
+      SECTION 6: CONTACT
+      Dark section, info panel + enquiry form + map
+====================================================== -->
+<section id="contact" class="section section-dark" style="scroll-margin-top: 120px;" aria-labelledby="contact-heading">
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <!-- Left column: Contact info -->
+      <div class="contact-info-col">
+        <div class="section-label reveal-up">Admissions</div>
+        <h2 class="section-heading reveal-up" id="contact-heading">
+          Ready to<br/><em>take off?</em>
+        </h2>
+        <p class="section-sub reveal-up">
+          Talk to our admissions team today. No obligation — just honest guidance on which program fits your goal.
+        </p>
+
+        <div class="contact-info-inner reveal-up">
+          <h3>Get in Touch</h3>
+          <div class="info-items">
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="#c9a84c" stroke-width="1.5"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="#c9a84c" stroke-width="1.5"/></svg>
+              </div>
+              <div>
+                <strong>Address</strong>
+                <span>No 1/7, Second Floor, Poonamallee High Road,<br/>Vanagaram, Chennai — 600095</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <span><a href="tel:+917676597979">+91 76765 97979</a> / <a href="tel:+919585855979">+91 95 8585 5979</a></span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span><a href="mailto:info@mileaviationacademy.com">info@mileaviationacademy.com</a></span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#c9a84c" stroke-width="1.5"/><path d="M12 6v6l4 2" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <strong>Office Hours</strong>
+                <span>Monday – Saturday: 10:00 AM – 6:00 PM</span>
+              </div>
+            </div>
+
+          </div><!-- /.info-items -->
+
+          <!-- Embedded map -->
+          <div class="map-wrap reveal-up">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d80.1262!3d13.0546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzE2LjYiTiA4MMKwMDcnMzQuMyJF!5e0!3m2!1sen!2sin!4v1"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mile Aviation Academy location on Google Maps"
+            ></iframe>
+          </div>
+
+        </div>
+      </div>
+
+     <!-- Right column: Enquiry form -->
+<div class="contact-form-col reveal-scale">
+  <div class="contact-form-wrap">
+
+    <h3>Send an Enquiry</h3>
+
+    <form class="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST">
+
+      <input
+        type="hidden"
+        name="access_key"
+        value="888784ee-9c1a-4146-9928-92b05ca6e353">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="e.g. Rahul"
+          autocomplete="name"
+          required />
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+91 98765 43210"
+            autocomplete="tel"
+            required />
+        </div>
+
+      </div>
+
+      <div class="form-group form-select-wrap">
+        <label for="course">Course Interested In</label>
+
+        <select id="course" name="course" required>
+          <option value="" disabled selected>Select a Course</option>
+          <option>GUEST RELATIONS, EXPERIENCE & TOURISM (G.R.E.A.T)</option>
+          <option>GROUND OPERATIONS MANAGEMENT (G.O.M)</option>
+        </select>
+
+        <svg class="select-arrow"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true">
+
+          <path
+            d="M4 6l4 4 4-4"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="form-group">
+        <label for="message">
+          Message
+          <span class="form-optional">(optional)</span>
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell us about your background and goals…"
+          rows="4"></textarea>
+      </div>
+
+      <button
+        class="btn btn-primary btn-full"
+        type="submit"
+        id="submit-btn">
+
+        <span>Submit Enquiry</span>
+
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true">
+
+          <path
+            d="M3 8H13M13 8L9 4M13 8L9 12"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+</div><!-- /.contact-grid -->
+</div>
+</section><!-- /#contact -->
+
+  
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-grid container">
+
+      <div class="footer-brand">
+        <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Mile Aviation Academy home">
+      <img src="images/logo.png" alt="Mile Aviation Academy Logo" class="logo-img">
+      
+          <span class="logo-text">Ready for  <em>take-off</em></span>
+        </a>
+        <p>Premier aviation training institute in Chennai. Shaping the next generation of aviation professionals.</p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" stroke="currentColor" stroke-width="1.5"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#career">Career Path</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="#courses">GUEST RELATIONS, EXPERIENCE & TOURISM (G.R.E.A.T)</a></li>
+          <li><a href="#courses">GROUND OPERATIONS MANAGEMENT (G.O.M)</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>Poonamallee High Rd, Vanagaram, Chennai – 600095</li>
+          <li><a href="tel:+917676597979 / 95858 55979">+91 76765 97979 / 95858 55979</a></li>
+          <li><a href="mailto:mileaviationacademy@gmail.com">mileaviationacademy@gmail.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom container">
+      <span>© 2026 Mile Aviation Academy. All rights reserved.</span>
+      <span>Chennai, Tamil Nadu, India</span>
+    </div>
+  </footer>
+
+  <!-- Lightbox (injected by JS) -->
+
+  <script src="script.js"></script>
+</body>
+</html>
